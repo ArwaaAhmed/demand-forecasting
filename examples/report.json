@@ -1,0 +1,35 @@
+{
+  "data_source": {
+    "type": "synthetic_demo",
+    "seed": 17,
+    "generator": "trend + weekday + Gaussian noise; no real customers"
+  },
+  "split": {
+    "training": [
+      "2025-01-01",
+      "2025-05-20"
+    ],
+    "calibration": [
+      "2025-05-21",
+      "2025-06-17"
+    ],
+    "test": [
+      "2025-06-18",
+      "2025-07-15"
+    ]
+  },
+  "model": {
+    "mae": 2.891197732852532,
+    "rmse": 3.43753312748343
+  },
+  "seasonal_naive": {
+    "mae": 6.096464285714283,
+    "rmse": 7.484544472730833
+  },
+  "interval": {
+    "nominal_level": 0.9,
+    "observed_test_coverage": 0.9642857142857143,
+    "caveat": "Residual band is heuristic for temporal data; no guaranteed future coverage."
+  },
+  "evaluation_note": "Model is frozen before calibration. Baseline can use the last observed calibration week; test targets are hidden from both predictors."
+}
